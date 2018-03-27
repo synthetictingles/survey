@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+
+// To load this function when the window loads
+window.onload = function loadStates() {
+
+//I select only one value (In this case Alabama, to test if it works)
+var queryStringStates = encodeURIComponent('SELECT A LIMIT 1');
+var magicIncantation = '/gviz/tq?gid=0&headers=1&tq=';
+
+//Put the query together
+var queryStates = new google.visualization.Query(
+'https://docs.google.com/spreadsheets/d/1xfb9trifQA5KDPc9Nh5hBL4MJ290Mxcc1Uod2VTPzYI/edit' +
+magicIncantation + queryStringStates);
+
+//Get the data
+var dataStates = response.getDataTable();
+
+//Load the data (In this case the state of Alabama) to the Selector which is in the body part with the //State of Texas by default to make sure that the Selector loads
+var x = document.getElementById("mySelect");
+var option = document.createElement("option");
+option.text = dataStates;
+x.add(option);
+}
+</script>
+</head>
+
+<body>
+<select id="mySelect">
+<option value="Texas">Texdds</option>
+</select>
+</body>
+</html>

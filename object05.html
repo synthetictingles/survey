@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script src="js/videopause.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/hideshow.js"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+<div>
+<div>
+  <iframe id="largeplayer" type="text/html" width="640" height="390"
+src="https://www.youtube.com/embed/WAu7EAO5yQc?enablejsapi=1;rel=0&amp;showinfo=0;autoplay=1;controls=0"
+frameborder="0"></iframe>
+</div>
+</div>
+<br>
+<div>
+  <br>
+<form name="object05" method="GET">
+<!--QUESTIONS BEGIN-->
+<div>
+    <p class="rubrik">I watched this object for <span id="minutes"></span> minutes and <span id="seconds"></span> seconds.</p>
+    <hr style="height:1px; visibility:hidden;">
+      <p class="rubrik">Did this object give you tingles?</p>
+
+      <label class="container">
+      <input type="radio" name="tingles?" value="yes" onclick="yes()"> Yes<br>
+      <span class="radio"></span>
+    </label>
+
+      <label class="container">
+      <input type="radio" name="tingles?" value="no" onclick="no()"> No<br>
+      <span class="radio"></span>
+    </label>
+
+    <label class="container">
+    <input type="radio" name="tingles?" value="don't know" onclick="no()"> I don't know<br>
+    <span class="radio"></span>
+    </label>
+
+
+      <br>
+
+    <div display="none" style="display: none" id="hideshow">
+      <p class="rubrik">In terms of strength, how would you rate the tingles?</p>
+
+      <label class="container">
+      <input type="radio" name="strength" value="extremely weak"> Extremely weak
+      <span class="radio"></span>
+    </label>
+
+      <label class="container">
+      <input type="radio" name="strength" value="very weak"> Very weak
+      <span class="radio"></span>
+    </label>
+
+      <label class="container">
+      <input type="radio" name="strength" value="weak"> Weak
+      <span class="radio"></span>
+    </label>
+
+      <label class="container">
+      <input type="radio" name="strength" value="moderate"> Moderate
+      <span class="radio"></span>
+    </label>
+
+      <label class="container">
+      <input type="radio" name="strength" value="strong"> Strong
+      <span class="radio"></span>
+    </label>
+
+    <label class="container">
+    <input type="radio" name="strength" value="very strong"> Very strong
+    <span class="radio"></span>
+    </label>
+
+    <label class="container">
+    <input type="radio" name="strength" value="extremely strong"> Extremely strong
+    <span class="radio"></span>
+    </label>
+    <br>
+
+      <p class="rubrik">In terms of pleasantness, how would you rate the tingles?</p>
+
+      <label class="container">
+      <input type="radio" name="pleasantness" value="extremely unpleasant"> Extremely unpleasant<br>
+      <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="pleasantness" value="very unpleasant"> Very unpleasant<br>
+      <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="pleasantness" value="slightly unpleasant"> Slightly unpleasant<br>
+      <span class="radio"></span>
+    </label>
+    <label class="container">
+    <input type="radio" name="pleasantness" value="neither pleasant nor unpleasant"> Neither pleasant nor unpleasant<br>
+    <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="pleasantness" value="slightly pleasant"> Slightly pleasant<br>
+      <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="pleasantness" value="very pleasant"> Very pleasant<br>
+      <span class="radio"></span>
+      </label>
+      <label class="container">
+      <input type="radio" name="pleasantness" value="extremely pleasant"> Extremely pleasant<br>
+      <span class="radio"></span>
+      </label>
+      <br>
+
+    </div>
+
+
+
+
+      <p class="rubrik">In terms of relaxation, how would you rate your <U>overall experience</u> of this object?</p>
+      <label class="container">
+      <input type="radio" name="relaxation" value="extremely unrelaxing"> Extremely unrelaxing<br>
+      <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="relaxation" value="very unrelaxing"> Very unrelaxing<br>
+      <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="relaxation" value="slightly unrelaxing"> Slightly unrelaxing<br>
+      <span class="radio"></span>
+    </label>
+    <label class="container">
+    <input type="radio" name="relaxation" value="neither relaxing nor unrelaxing"> Neither relaxing nor unrelaxing<br>
+    <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="relaxation" value="slightly relaxing"> Slightly relaxing<br>
+      <span class="radio"></span>
+    </label>
+      <label class="container">
+      <input type="radio" name="relaxation" value="very relaxing"> Very relaxing<br>
+      <span class="radio"></span>
+      </label>
+      <label class="container">
+      <input type="radio" name="relaxation" value="extremely relaxing"> Extremely relaxing<br>
+      <span class="radio"></span>
+      </label>
+
+      <br>
+      <br> <br>
+    </div>
+  </div>
+<!--QUESTIONS END-->
+<input id="next" type="submit" class="submit" value="Next (6/8)">
+  <br><br><br>
+</form>
+</div>
+
+
+<!--SKRIVER TILL SPREADSHEET-->
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwaJLYCsn4LGOpA5bOaOaEa6AA29AppZe3JrN_5m8REaPNzykU/exec'
+const form = document.forms['object05']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => showSuccessMessage(response))
+    .catch(error => showErrorMessage(error))
+})
+</script>
+
+<!--KRYSSA I NÅGOT-->
+<script>
+document.getElementById("next").onclick = function() {myFunction()};
+
+function myFunction() {
+  window.location.href = 'object06.html';
+}
+</script>
+</body>
+</html>

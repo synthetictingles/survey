@@ -1,0 +1,246 @@
+body {
+	background-color: #e5e5e5;
+}
+
+.navbar {
+	background-color: #e5e5e5;
+	height: 68px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding-top: 2px;
+}
+
+
+hr {
+	border: 0;
+	border-top: 1px solid #000;
+	padding: 0;
+}
+
+
+/* unvisited link */
+a:link {
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+}
+
+/* visited link */
+a:visited {
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+}
+
+/* mouse over link */
+a:hover {
+	color: #0000ff;
+	text-decoration: none;
+	display: inline-block;
+}
+
+/* selected link */
+a:active {
+	color: #0000ff;
+	text-decoration: none;
+	display: inline-block;
+}
+
+#largeplayer {
+	/* For desktop: */
+	width: 79.04vw;
+	height: 44.46vw;
+}
+
+
+@media only screen and (max-width: 1920px) {
+	/* For mobile phones: */
+	[class*="col-12"] {
+		width: 50%;
+	}
+	.textbox {
+		width: 550px;
+	}
+
+}
+
+
+@media only screen and (max-width: 700px) {
+	/* For mobile phones: */
+	[class*="col-8"] {
+		width: 30%;
+	}
+	#largeplayer {
+		width: 86vw;
+		height: 48.375vw;
+	}
+	.textbox {
+		width: 90vw;
+	}
+
+
+}
+
+
+.embed-container {
+	position: relative;
+	padding-bottom: 44%;
+	height: 0;
+	overflow:
+	hidden;
+	max-width: 1280px;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed
+{ position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.rubrik	{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+}
+.rubrik.error	{
+	color: red;
+}
+
+.rubrikcenter {
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+}
+.regular	{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+}
+
+.spalt {
+	width: 330px;
+	height: 460px;
+	display: inline-block;
+	float: left;
+
+}
+
+
+.meny {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 0.2;
+}
+
+
+/* Customize the label (the container) */
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+	position: absolute;
+	opacity: 0;
+}
+
+/* Create a custom radio button */
+.radio {
+	position: absolute;
+	top: 1px;
+	left: 0;
+	height: 22px;
+	width: 22px;
+	border-radius: 50%;
+	border: 3px solid #000;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 22px;
+	width: 22px;
+	border: 3px solid #000;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark  {
+	background-color: #808080;
+}
+.container:hover input ~ .radio {
+	background-color: #808080;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+	background-color: #0000ff
+}
+.container input:checked ~ .radio {
+	background-color: #0000ff;
+}
+
+
+
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.container .radio:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.submit {
+	background-color: #808080;
+	border: none;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+	outline:0;
+}
+.submit:hover {
+	background-color: #0000ff;
+}
+.submit:focus {
+	background-color: #ccc;
+}
+
+.errormessage	{
+	display: none;
+}

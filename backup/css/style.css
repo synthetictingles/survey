@@ -1,0 +1,197 @@
+body {margin:2%;padding-left:5%;padding-right:5%}
+
+#player {
+			/* For desktop: */
+	width: 19.2vw;
+	height: 10.8vw;
+}
+#largeplayer {
+			/* For desktop: */
+			width: 76vw;
+			height: 42.75vw;
+}
+
+
+	@media only screen and (max-width: 1920px) {
+	    /* For mobile phones: */
+	    [class*="col-12"] {
+	        width: 50%;
+	    }
+
+
+
+	@media only screen and (max-width: 700px) {
+	    /* For mobile phones: */
+	    [class*="col-8"] {
+	        width: 30%;
+	    }
+
+.textbox {
+	width: 100%;
+}
+#player {
+			/* For mobile phones: */
+	width: 86vw;
+	height: 48.375vw;
+}
+
+}
+
+@media only screen and (min-width: 700px) {
+		/* For mobile phones: */
+		[class*="col-8"] {
+				width: 30%;
+		}
+
+.textbox {
+width: 50%;
+}
+}
+
+
+.embed-container {
+	position: relative;
+	padding-bottom: 44%;
+	height: 0;
+	overflow:
+	hidden;
+	max-width: 1280px;
+}
+
+	.embed-container iframe, .embed-container object, .embed-container embed
+	{ position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+
+.rubrik	{
+	font-family: 'PT Sans', sans-serif;
+  font-size: 22px;
+	font-weight: bold;
+}
+
+
+
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 5px;
+  cursor: pointer;
+	font-family: 'PT Sans', sans-serif;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark  {
+  background-color: #ccc;
+}
+.container:hover input ~ .radio {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.container input:checked ~ .radio {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container input:checked ~ .radio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.container .radio:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.submit {
+  background-color: #2196F3;
+	border: none;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+	outline:0;
+}
+.submit:hover {
+	background-color: #ccc;
+}
+.submit:focus {
+  background-color: #ccc;
+}

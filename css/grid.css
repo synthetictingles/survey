@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 6%;}
+.col-2 {width: 11%;}
+.col-3 {width: 22%;}
+.col-4 {width: 24%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+[class*="col-"] {
+    float: left;
+    margin-right: 33px;
+    border: 0px solid black;
+
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+#wrapper {
+
+    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+}
+#left {
+
+    float:left; /* add this */
+    border: 1px solid red;
+}
+#right {
+    border: 1px solid green;
+    float: right; /* add this */
+}

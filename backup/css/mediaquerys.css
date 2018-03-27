@@ -1,0 +1,41 @@
+
+@media only screen and (max-width: 1920px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 22%;
+    }
+
+
+@media only screen and (max-width: 1650px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 30%;
+    }
+    #player {
+          /* For desktop: */
+      width: 25.92vw;
+      height: 14.58vw;
+    }
+
+
+@media only screen and (max-width: 1200px) {
+		    /* For mobile phones: */
+		    [class*="col-"] {
+		        width: 45%;
+		    }
+        #player {
+              /* For desktop: */
+          width: 38.4vw;
+          height: 21.6vw;
+        }
+
+@media only screen and (max-width: 800px) {
+				/* For mobile phones: */
+				[class*="col-"] {
+						width: 100%;
+			  }
+        #player {
+              /* For desktop: */
+              width: 86vw;
+            	height: 48.375vw;
+        }
