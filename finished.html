@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html>
 <body>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/grid.css">
-  <link rel="stylesheet" type="text/css" href="css/mediaquerys.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
-  <div class="page">
-  <!--NAVBAR BEGINS-->
-  <div class="navbar">
-  <hr align="left" style="height:1px;visibility:hidden;">
-  <p class="meny">
-      <a href="summaryvideo.html">Summary video</a> &nbsp;&nbsp;
-      <a href="results.html">Results</a> &nbsp;&nbsp;
-      <a href="index.html">About</a>
-  </p></div><br><br><br>
+
   <!--NAVBAR ENDS-->
+  <div class="page textbox">
+    <p class="font"><br><br>
+      Thank you for taking this survey! Leave your email below if you want the survey results when it's finished.
 
-    <br><div class="textbox">
-  <p class="rubrik">
-Thank you for taking this survey! Please check back May when enough data has been collected.
-  <br>
-  <br>
+      <!--EMAIL FORM-->
+      <form method="GET" name="email_list">
 
+        <input type="email" name="email" id="email" class="font email emailwidth"
+        placeholder="Leave your email here">
+        <br><br><br>
+        <input id="submit" type="submit" class="submit font" value="Submit" class="submit">
+        <div id="successMessage" style="display:none;">
+          <p class="font">Submitted!</p>
+        </div>
+      </form>
+      <br><br>
+      <div id="successMessage" style="display:none;">
+        <p class="font">Submitted!</p>
+      </div>
 
-
-  <br>
-  <br>
-
-
-
-  <br><br><br><br><br><br>
-
+      <br><br><br><br><br><br>
+    </p>
   </div>
-  </div>
+</div>
 
+<!--SKRIVER TILL SPREADSHEET-->
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzNhCHz68sAYpUOUvMMB40msBqVruUESmwn6_6mJo_abyTe061t/exec'
+const form = document.forms['email_list']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  document.getElementById("successMessage").style.display = "block";
+  document.getElementById("submit").style.display = "none";
+})
+</script>
 
 </body>
 </html>

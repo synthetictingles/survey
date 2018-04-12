@@ -1,77 +1,51 @@
 <!DOCTYPE html>
 <html>
 <body>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/mediaquerys.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/main_intro.js"></script>
   </head>
 
-<br>
-<div class="page">
-  <br><div class="textbox">
-<p class="rubrik">
-  SYNTHETIC TINGLES
-  <br><br>
-Is it possible to feel tingles from synthetic, digital 3D-animations?
-Help me find out by taking this survey!
-<br>
-<br>
-You will be taken through ten different animations.
-Watch each one for as long as you like and answer the questions below.
-You are strongly recommended to use headphones and to seat comfortably in a calm and quiet environment.
-<br>
-<br>
-Do you have previous ASMR experience?
+  <div class="page font textbox intro">
+
+        SYNTHETIC TINGLES
+        <br><br>
+        In this survey you will experience ten different animations.
+        The purpose is to see if they can trigger ASMR-tingles.
+        <br>
+        <br>
+        Watch each animation for as long as you like, then answer the questions below.
+        You are strongly recommended to use headphones and to seat comfortably in a calm and quiet environment.
+
+      <div class="formsection missing">
+        <p class="font errorenabler">  Do you have previous ASMR experience?</p>
 
 
+      <form name="experience">
+        <label class="container font">
+          <input class="experience" onchange="this.setCustomValidity(validity.valueMissing ? 'Select your experience level' : '');"
+          id="experience" required name="experience" type="radio" name="experience" value="1">Yes<br>
+          <span class="radio"></span>
+        </label>
 
-<!--EXPERIENCE SCRIPTS-->
+        <label class="container font">
+          <input class="experience" onchange="this.setCustomValidity(validity.valueMissing ? 'Select your experience level' : '');"
+          id="experience" required name="experience" type="radio" name="experience" value="2">No<br>
+          <span class="radio"></span>
+        </label>
 
-<script type="text/javascript">
-  document.getElementById("experience").setCustomValidity("Select your experience level");
-</script>
+        <hr style="height:18px; visibility:hidden;">
 
-<script type="text/javascript">
-function OnSubmitForm()
-{
-  if(document.experience.experience[0].checked == true)
-  {
-    document.experience.action ="object01_experienced.html";
-  }
-  else
-  if(document.experience.experience[1].checked == true)
-  {
-    document.experience.action ="object01_inexperienced.html";
-  }
-  return true;
-}
-</script>
+        <button id="next" class="font submit">Begin</button>
 
-<form name="experience" onsubmit="return OnSubmitForm();">
-  <label class="container">
-  <input class="experience" onchange="this.setCustomValidity(validity.valueMissing ? 'Select your experience level' : '');"
-  id="experience" required name="experience" type="radio" name="experience" value="1"> Yes<br>
-  <span class="radio"></span>
-  </label>
+      </form>
 
 
-  <label class="container">
-  <input class="experience" onchange="this.setCustomValidity(validity.valueMissing ? 'Select your experience level' : '');"
-  id="experience" required name="experience" type="radio" name="experience" value="2"> No<br>
-  <span class="radio"></span>
-  </label>
-
-<hr style="height:18px; visibility:hidden;">
-<input type="submit" class="submit" value="Begin" name="begin">
-
-</form>
-
-
-<br><br><br><br>
-</div>
-</div>
+      <br><br><br><br>
+    </div>
+  </div>
 </body>
 </html>

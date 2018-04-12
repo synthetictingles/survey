@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 		if (submitBlueStatus == true) {
 			element.classList.add("submitready");
 			//console.log("Nu ska knappen bli blå")
-			document.getElementById("errormessage").style.display = "none";
+
 
 		} else {
 			element.classList.remove("submitready");
@@ -63,6 +63,7 @@ jQuery(document).ready(function($){
 
 		if (formSectionStatus == true) {
 			// Göra din google-grej! :D
+
 			sendForm();
 
 		} else {
@@ -72,7 +73,6 @@ jQuery(document).ready(function($){
 	});
 
 	function checkFormSections(formsections) {
-		console.log("THIS:", formsections );
 		var missing = [];
 		var headings = $('body').find('.errorenabler').removeClass('errortext');
 		for (var i = 0; i < formsections.length; i++) {
@@ -80,7 +80,6 @@ jQuery(document).ready(function($){
 
 			if (currentFormSection.is(':visible'))	{
 				if (currentFormSection.hasClass('missing')) {
-					document.getElementById("errormessage").style.display = "block";
 					//console.log("thizzz", currentFormSection);
 					currentFormSection.find('.errorenabler').addClass('errortext');
 					missing.push(formsections[i]);
@@ -88,6 +87,7 @@ jQuery(document).ready(function($){
 				}
 			}
 		}
+
 		if (!missing.length) {
 			return true;
 		} else {
@@ -96,23 +96,18 @@ jQuery(document).ready(function($){
 	}
 
 	function sendForm() {
-		setTimeout(function(){
-			var url = $('body').find('.redirectAnchor').attr('redirectUrl')
-			window.location.href = (url);
-		}, 250);
-		var scriptURL = $('body').find('.redirectAnchor').attr('spreadsheetURL')
-		var payload = document.forms['survey'];
-		if (true) {
-			console.log('sending form');
-			var data = new FormData(payload);
-
-			fetch(scriptURL,
-				{
-					method: "POST",
-					body: data
-				})
-
-			}
+		if(document.experience.experience[0].checked == true)
+		{
+			window.location.href = 'object01_experienced.html';
+			console.log("EXPERIENCED")
 		}
+		else
+		if(document.experience.experience[1].checked == true)
+		{
+			window.location.href = 'object01_inexperienced.html';
+			console.log("NOT EXPERIENCED")
+		}
+		return true;
+	}
 
-	});
+});
